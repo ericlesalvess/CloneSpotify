@@ -1,3 +1,8 @@
+:root {
+    --default-green:#1db954;
+    --ligth-green:#1ed760;
+}
+
 *{
     box-sizing:border-box; /* para que o padding dos elementos nao afete a largura */
     margin:0;
@@ -11,7 +16,7 @@ body{
 }
 /* utily classes */
 .btn-primary{
-background:#1db954;
+background: var(--default-green);
 color:wihte;
 text-transform: uppercase;
 padding: 15px 60px;
@@ -19,7 +24,14 @@ border:none;
 border-radius:30px;
 letter-spacing: 1px;
 font-weight: bold;
+transition: all 300ms ease;
 }
+.btn-primary:hover{
+    background:var(--ligth-green);
+    cursor:pointer;
+}
+
+
 .logo{
     height:40px;
     width: auto;
@@ -59,13 +71,20 @@ font-weight: bold;
     text-decoration: none;  
     color:white;
 }
+.navbar-itens a:hover{
+    cursor: pointer;
+    color:var(--default-green);
+}
 
 
 #navbar .navbar-container ul li{
     padding:0 20px;
+   
 }
+
+
 #navbar .navbar-container ul li:nth-child(3){
-    border-right:1px solid white;
+    border-right: 1px solid white;
 }
 
 /* Showcase */
@@ -76,7 +95,7 @@ display:flex;
 justify-content: center;
 align-items: center;
 color:white;
-background:url('/img/showcase.webp')center center/cover; /* mantem imagem centralizada pesquisar */ ;
+background:url('img/showcase.webp')center center/cover; /* mantem imagem centralizada pesquisar */ ;
 background-color: rgba(0, 0, 0, 0.4);
 background-blend-mode:color;
 }
@@ -99,13 +118,15 @@ background-blend-mode:color;
 #footer{
     background:black;
     color:white;
+    padding:50px 0;
 }
 
 #footer .footer-content{
     display:flex;
     width:60%;
     margin:auto;
-    padding:50px 0;
+    justify-content: space-between;
+
 }
 
 #footer .footer-content .footer-menu{
@@ -115,6 +136,12 @@ background-blend-mode:color;
 
 #footer .footer-content .footer-menu-item{
     margin:25px 0;
+    transition:all 300ms ease;
+}
+
+#footer .footer-content .footer-menu-item:hover{
+    color:var(--default-green);
+    cursor:pointer;
 }
 #footer .footer-content .footer-menu p{
     font-weight:bold;
@@ -132,6 +159,12 @@ background-blend-mode:color;
 .socials i{
     margin:0 20px;
     font-size:1.7rem;
+    transition: all 300ms ease;
+}
+
+.socials i:hover{
+    color:var(--default-green);
+    cursor:pointer;
 }
 
 /* FOOTER INFO */
@@ -139,26 +172,83 @@ background-blend-mode:color;
 .footer-info{
     display:flex;
     justify-content: space-between;
-    align-items: flex-end; /* alinhar no fim da pagina */
+    align-items: flex-end; 
+    width:60%;
+    margin:auto;
+    font-weight: bold;
+    color:#919496;
+    font-size:0.75rem;
+    padding-top: 30px;
 }
 
 .footer-info .footer-info-items{
 display:flex;
 list-style:none;
-gap:10px;
 
 }
 
+.footer-info .footer-info-items .footer-info-item{
+    margin:0 20px;
+    transition: all 300ms ease;
+}
+.footer-info .footer-info-items .footer-info-item:hover{
+   color:var(--default-green);
+   cursor: pointer;
+   
+}
 
-
-.footer-info .rights {
+.footer-info .rights .country{
     display:flex;
-    gap:10px;
+    justify-content: flex-end;
+    align-items:center;
+    margin-bottom:7px;
 }
 
 .footer-info .rights .county .brazil-flag{
-    height: 20px;
-    width: 2vh;
-    height: 2vh;
+    height: 12px;
+    width: auto;
+    display: inline-block;
+    margin-left: 5px;
 
 }
+
+@media (max-width: 768px) {
+
+
+    .logo{
+        margin-left: 10px;
+        width:20%;
+        
+    }
+    #navbar .navbar-container {
+        display: flex;
+        width: 100%;
+
+    }
+
+    #navbar .navbar-container ul li {
+        padding-bottom: -0px;
+        flex-direction: flex-start;
+
+       
+    }
+
+    #showcase .showcase-container h2 {
+        font-size: 2.5rem;
+    }
+
+    #showcase .showcase-container p {
+        font-size: 0.7rem;
+    }
+
+    #footer .footer-content {
+        width: 90%;
+    }
+
+    #footer .footer-content .footer-menu {
+        margin: 0 20px;
+    }
+
+
+}
+
