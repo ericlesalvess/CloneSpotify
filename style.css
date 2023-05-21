@@ -76,7 +76,7 @@ display:flex;
 justify-content: center;
 align-items: center;
 color:white;
-background:url('/img/showcase.webp')center center/cover; /* mantem imagem centralizada pesquisar */ ;
+background:url('img/showcase.webp')center center/cover; /* mantem imagem centralizada pesquisar */ ;
 background-color: rgba(0, 0, 0, 0.4);
 background-blend-mode:color;
 }
